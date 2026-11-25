@@ -1,0 +1,12 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><meta name="referrer" content="no-referrer"><title>Conectar TikTok · Hack It</title>
+<style>body{background:#0B0B0F;color:#F2F4F7;font:17px system-ui,sans-serif;text-align:center;padding:50px 18px}
+code{display:block;word-break:break-all;background:#11161F;border:1px solid #3A78D6;border-radius:10px;padding:14px;margin:18px auto;max-width:560px;font-size:15px}
+button{background:#3A78D6;color:#fff;border:0;border-radius:9px;padding:10px 18px;font:inherit;cursor:pointer}p{color:#7A8699}</style></head>
+<body><h2>Conectar TikTok al dashboard</h2><div id="r"></div><script>
+const q=new URLSearchParams(location.search),c=q.get('code'),r=document.getElementById('r');
+if(c){r.innerHTML='<p>Copia este código y pégalo en la terminal (python3 tools/redes.py tiktok):</p><code id="c"></code><button id="b">Copiar</button><p>Este código sirve una sola vez y solo junto con tu client secret.</p>';
+document.getElementById('c').textContent=c;document.getElementById('b').onclick=()=>navigator.clipboard.writeText(c).then(()=>b.textContent='Copiado ✓');
+history.replaceState(null,'',location.pathname)}
+else r.innerHTML='<p>'+(q.get('error_description')||q.get('error')||'Esta página solo se usa al conectar TikTok.').replace(/[<>&]/g,'')+'</p>';
+</script></body></html>
